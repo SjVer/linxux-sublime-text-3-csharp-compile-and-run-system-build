@@ -1,0 +1,13 @@
+{
+	//requires mono and mono-mcs
+	"shell": true,
+	
+	//automatically removes .exe file:
+	"cmd": ["mcs $file && mono $file_path/$file_base_name.exe && rm $file_path/$file_base_name.exe"],
+	//keeps .exe file:
+	//"cmd": ["mcs $file && mono $file_path/$file_base_name.exe"],
+	
+	"file_regex": "^[ ]File \"(...?)\", line ([0-9]*)",
+	"selector": "source.cs",
+	"file_patterns": ["*.cs"]
+}
